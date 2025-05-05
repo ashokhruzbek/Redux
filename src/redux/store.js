@@ -1,4 +1,4 @@
 import { createStore } from "redux";
-import { studentReducer } from "../studentReducer";
+import { studentReducer } from "./studentReducer";
 
-const store = createStore(studentReducer)
+export const store = createStore(studentReducer)
