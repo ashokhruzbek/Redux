@@ -7,12 +7,12 @@ const boshlangichQiymat = {
     if (action.type === "ADD_STUDENT") {
       return {
         ...state,
-        students: [...state.students, "Jahongir"],
+        students: [...state.students, action.payload],
       };
     } else if (action.type === "REMOVE_STUDENT") {
       return {
         ...state,
-        students: state.students.filter((student) => student !== "Azamat"),
+        students: state.students.filter((student) => student !== action.payload),
       };
     } else {
       return state;

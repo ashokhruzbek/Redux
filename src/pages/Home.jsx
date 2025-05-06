@@ -1,16 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 function Home() {
     const students = useSelector(state => state.students);
     const dispatch = useDispatch();
+    const [input, setInput] = useState("");
 
     console.log(students);
+
+    const handleChange = (e) =>{
+      setInput(e.target.value)
+    }
+
+    const handleAdd =()=>{
+      dispatch({type: "ADD_STUDENT", payload: input})
+    }
+
+    const handleRemove =()=>{
+      dispatch({type: "REMOVE_STUDENT", payload: input })
+    }
+
+
+
   return (
     <div>
       <h1>Home</h1>
-      <button onClick={()=> dispatch({type: "ADD_STUDENT"})}>ADD Jahongir</button>
-      <button onClick={()=> dispatch({type: "REMOVE_STUDENT"})}>Remove Azamat</button>
+      <input type="text" value={input} onChange={handleChange} />
+      <button onClick={handleAdd}>ADD Jahongir</button>
+      <button onClick={handleRemove}>Remove Azamat</button>
     </div>
   )
 }
