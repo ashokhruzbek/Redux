@@ -14,10 +14,12 @@ function Home() {
 
     const handleAdd =()=>{
       dispatch({type: "ADD_STUDENT", payload: input})
+      setInput('')
     }
 
     const handleRemove =()=>{
       dispatch({type: "REMOVE_STUDENT", payload: input })
+      setInput('')
     }
 
 
