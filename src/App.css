@@ -43,14 +43,17 @@ body {
 }
 
 .container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
+  gap: 20px;
   max-width: 1200px;
   width: 100%;
 }
 
 .card {
+  
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -94,4 +97,13 @@ body {
 }
 .addColor{
   background-color: rgb(245, 156, 171);
+}
+.btns{
+  display: flex;
+  gap: 10px;
+}
+.input-grade{
+  border-radius: 20px;
+  border: #333333;
+  /* border-color:#333333 ; */
 }

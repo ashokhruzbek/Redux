@@ -53,7 +53,12 @@ export const studentReducer = (state = initialState, action) => {
         })
     }
     else if (action.type === CHANGE_GRADE) {
-        return state
+        return state.map(student =>{
+            if (student.id === action.payload.studentId){
+                return {...student,grade: action.payload.grade}
+            }
+            return student
+        })
     }
     else {
         return state

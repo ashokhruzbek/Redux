@@ -11,8 +11,12 @@ export const marryStudents = (studentId)=>{
         payload: studentId
     }
 }
-export const changeGrades = ()=>{
+export const changeGrades = (studentId, grade)=>{
     return {
-        type: CHANGE_GRADE
+        type: CHANGE_GRADE,
+        payload:{
+            studentId,
+            grade
+        }
     }
 }
