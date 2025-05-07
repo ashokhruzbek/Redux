@@ -1,12 +1,33 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { SORT_AGE } from "../redux/actionTypes";
 
 function Contact() {
-    const students = useSelector(state => state.students);
-    console.log(students);
+  const students = useSelector((state) => state.students);
+  const dispatch = useDispatch();
+  // console.log(students);
+
+  const handleSort = () => {
+    dispatch({ type: SORT_AGE });
+  };
+
   return (
-    <div>Contact</div>
-  )
+    <>
+    <button className="sort" onClick={handleSort}>Sort by age</button>
+    <button className="sort" onClick={handleSort}>MARRY</button>
+    
+    <div className="container">
+      {students.map((student) => (
+        <div key={student.id} className="card">
+          <h2>{student.name}</h2>
+          <p>Age: {student.age}</p>
+          <p>Grade: {student.grade}</p>
+          <p>Marital Status: {student.isMarried ? "Married" : "Single"}</p>
+        </div>
+      ))}
+    </div>
+    </>
+  );
 }
 
-export default Contact
+export default Contact;

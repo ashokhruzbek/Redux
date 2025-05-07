@@ -2,8 +2,17 @@
 // import { studentReducer } from "./studentReducer";
 // export const store = createStore(studentReducer)
 
-import { createStore } from "redux";
+import { combineReducers, createStore } from "redux";
 import { counterReducer } from "./counterReducer";
+import { studentReducer } from "./studentReducer2";
 
+const barchaReducerlar = combineReducers({
+    counter: counterReducer,
+    students: studentReducer
+})
+export const store = createStore(
+    barchaReducerlar,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 
-export const store = createStore(counterReducer)
+)
+
