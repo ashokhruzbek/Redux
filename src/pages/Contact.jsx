@@ -15,22 +15,22 @@ function Contact() {
     dispatch(marryStudents(4));
   }
   const changeGrade =()=>{
-    dispatch(marryStudents(4));
+    dispatch(marryStudents());
   }
 
   return (
     <>
     <button className="sort" onClick={handleSort}>Sort by age</button>
-    <button className="sort" onClick={handleMarry}>Marry </button>
     <button className="sort" onClick={changeGrade}>Change Grade </button>
     
     <div className="container">
       {students.map((student) => (
-        <div key={student.id} className="card">
+        <div key={student.id} className="card" style={{backgroundColor: student.isMarried ? 'pink': 'white' }}>
           <h2>{student.name}</h2>
           <p>Age: {student.age}</p>
           <p>Grade: {student.grade}</p>
           <p>Marital Status: {student.isMarried ? "Married 💍❤️‍🔥" : "Single"}</p>
+          <button className="sort" onClick={()=>dispatch(marryStudents(student.id))}>Marry </button>
         </div>
       ))}
     </div>

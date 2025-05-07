@@ -92,3 +92,6 @@ body {
   border-radius: 20px;
   box-shadow: 7px 3px 10px #333333;
 }
+.addColor{
+  background-color: rgb(245, 156, 171);
+}
