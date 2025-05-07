@@ -1,6 +1,8 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { changeGrades, marryStudents, sortStudents } from "../redux/actions";
+import GradeForm from "../components/GradeForm";
+import AgeForm from "../components/AgeForm";
 
 function Contact() {
   const students = useSelector((state) => state.students);
@@ -28,11 +30,11 @@ function Contact() {
             <p>Age: {student.age}</p>
             <p>Grade: {student.grade}</p>
             <p>Marital Status: {student.isMarried ? "Married 💍❤️‍🔥" : "Single"}</p>
-            <input className="input-grade" type="number" />
             <div className="btns">
               <button className="sort" onClick={() => dispatch(marryStudents(student.id))}>Marry </button>
-              <button className="sort" onClick={() => dispatch(changeGrades(student.id,6))}>Change Grade</button>
             </div>
+            <GradeForm studentId ={student.id}/>
+            <AgeForm studentId={student.id}/>
           </div>
         ))}
       </div>

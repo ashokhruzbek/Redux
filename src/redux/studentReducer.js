@@ -1,4 +1,4 @@
-import { CHANGE_GRADE, MARRY, SORT_AGE } from "./actionTypes"
+import { CHANGE_AGE, CHANGE_GRADE, MARRY, SORT_AGE } from "./actionTypes"
 
 const initialState = [
     {
@@ -56,6 +56,14 @@ export const studentReducer = (state = initialState, action) => {
         return state.map(student =>{
             if (student.id === action.payload.studentId){
                 return {...student,grade: action.payload.grade}
+            }
+            return student
+        })
+    }
+    else if (action.type === CHANGE_AGE) {
+        return state.map(student =>{
+            if (student.id === action.payload.studentId){
+                return {...student,age: action.payload.age}
             }
             return student
         })
