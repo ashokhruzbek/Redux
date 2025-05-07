@@ -4,7 +4,7 @@
 
 import { combineReducers, createStore } from "redux";
 import { counterReducer } from "./counterReducer";
-import { studentReducer } from "./studentReducer2";
+import { studentReducer } from "./studentReducer";
 
 const barchaReducerlar = combineReducers({
     counter: counterReducer,

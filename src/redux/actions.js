@@ -5,9 +5,10 @@ export const sortStudents = ()=>{
         type: SORT_AGE
     }
 }
-export const marryStudents = ()=>{
+export const marryStudents = (studentId)=>{
     return {
-        type: MARRY
+        type: MARRY,
+        payload: studentId
     }
 }
 export const changeGrades = ()=>{

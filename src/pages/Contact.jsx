@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { sortStudents } from "../redux/actions";
+import { marryStudents, sortStudents } from "../redux/actions";
 
 function Contact() {
   const students = useSelector((state) => state.students);
@@ -11,10 +11,18 @@ function Contact() {
     dispatch(sortStudents());
   };
 
+  const handleMarry =()=>{
+    dispatch(marryStudents(4));
+  }
+  const changeGrade =()=>{
+    dispatch(marryStudents(4));
+  }
+
   return (
     <>
     <button className="sort" onClick={handleSort}>Sort by age</button>
-    <button className="sort" onClick={handleSort}>MARRY</button>
+    <button className="sort" onClick={handleMarry}>Marry </button>
+    <button className="sort" onClick={changeGrade}>Change Grade </button>
     
     <div className="container">
       {students.map((student) => (
@@ -22,7 +30,7 @@ function Contact() {
           <h2>{student.name}</h2>
           <p>Age: {student.age}</p>
           <p>Grade: {student.grade}</p>
-          <p>Marital Status: {student.isMarried ? "Married" : "Single"}</p>
+          <p>Marital Status: {student.isMarried ? "Married 💍❤️‍🔥" : "Single"}</p>
         </div>
       ))}
     </div>
