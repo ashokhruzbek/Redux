@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { SORT_AGE } from "../redux/actionTypes";
+import { sortStudents } from "../redux/actions";
 
 function Contact() {
   const students = useSelector((state) => state.students);
@@ -8,7 +8,7 @@ function Contact() {
   // console.log(students);
 
   const handleSort = () => {
-    dispatch({ type: SORT_AGE });
+    dispatch(sortStudents());
   };
 
   return (
